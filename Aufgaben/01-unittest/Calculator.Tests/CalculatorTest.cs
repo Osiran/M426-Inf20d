@@ -36,5 +36,37 @@ namespace Calculator.Tests
             // Then
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public void Multiplikation()
+        {
+            int a = 6;
+            int b = 4;
+            Calculator calculator = new Calculator();
+
+            int actual = calculator.Multiplication(a, b);
+
+            Assert.Equal(24, actual);
+        }
+
+        [Fact]
+        public void Division()
+        {
+            int a = 6;
+            int b = 3;
+            Calculator calculator = new Calculator();
+
+            int actual = calculator.Division(a, b);
+
+            Assert.Equal(2, actual);
+        }
+        [Fact]
+        public void DivisionBy0()
+        {
+            int a = 6;
+            int b = 0;
+            Calculator calculator = new Calculator();
+
+            Assert.Throws<ArgumentException>(() => calculator.Division(a, b));
+        }
     }
 }
